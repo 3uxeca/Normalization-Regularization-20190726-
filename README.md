@@ -50,3 +50,11 @@ Regularization 방법으로는 L1 Regularization, L2 Regularization, Dropout, Ea
 # B.2.2. L2 Regularization
  기존의 cost function에 가중치의 제곱을 포함하여 더함으로써 L1 Regularization과
 마찬가지로 가중치가 너무 크지 않은 방향으로 학습되게 된다. 이를 Weight decay라고도 한다.
+
+# 추가
+● 배치 정규화(batch normalization)
+ dataset을 사전에 정규화하는 것과는 달리 batch normalization은 각 미니 배치별로 학습 전에 정규화 처리를 하는 기법이다.
+데이터의 전처리로서 dataset을 정규화하고 weight의 초기값을 정리함으로써 학습이 잘 진행되기는 하지만 학습시킬 때에는
+신경망 모델 내부에서 분산이 편중되어 버리기 때문에 전처리를 한 효과가 한정적일 수 밖에 없다.
+ batch normalization은 학습에 사용하는 각 미니 배치별로 정규화를 하기 때문에 학습 과정 전체에서 효과가 나타난다.
+ 미니 배치의 장점으로는 1. 학습률을 크게 설정해도 학습이 잘 진행된다. 2. dropout을 사용하지 않아도 일반화 성능이 높다.
