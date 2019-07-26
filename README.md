@@ -1,19 +1,19 @@
 # Normalization-Regularization-20190726-
-Machine Learning에서의 Normalization(정규화), Regularization(일반화)의 목적과 특징 공부.
+#Machine Learning에서의 Normalization(정규화), Regularization(일반화)의 목적과 특징 공부.
 
-1. 목적
+#1. 목적
 Normalization(정규화)과 Regularization(일반화)의
 공통점은 'Overfitting(과적합)'을 방지하기 위함이다.
 
-2. 차이점
+#2. 차이점
 목적은 같으나 각 개념에는 약간의 차이가 존재한다.
 
-2-1. Normalization(정규화)
+#2-1. Normalization(정규화)
  Normalization은 데이터를 좀 더 compact하게 만들기 위해 사용한다.
 즉, 값의 범위(scale)를 축소하는 re-scaling 과정을 의미한다. 왜 이렇게 해야할까?
 
  먼저, scale의 범위가 너무 크면 노이즈 데이터가 생성되거나 overfitting 가능성이 높아진다.
-# 제곱 손실 함수와 절댓값 손실 함수의 특성을 비교해보면 그 이유를 짐작할 수 있다.
+※ 제곱 손실 함수와 절댓값 손실 함수의 특성을 비교해보면 그 이유를 짐작할 수 있다.
 제곱 손실 함수를 사용할 때에는 값이 비정상적으로 커져 노이즈 데이터가 많이 생성될 수 있다.
 때문에 노이즈 데이터가 너무 많이 생성될 것 같으면 절댓값 손실 함수를 사용한다.
  또, 활성화 함수(activation function)를 거치는 의미가 사라진다.
@@ -21,11 +21,11 @@ Normalization(정규화)과 Regularization(일반화)의
  마지막으로, weight 초기화 방법으로 정규분포(N(0,1))로부터 값을 생성하는 방법을 자주 사용하는데,
 정규분포의 값은 ±2.58내에 99%가 존재한다. 따라서, scale이 너무 커서 값의 분포 범위가 넓으면 값을 정하기 힘들어진다.
 
-# Normalization의 scale 조절 방식
+※ Normalization의 scale 조절 방식
  다양한 방식이 존재하나, 한 예를 들자면 이미지의 픽셀 값 범위(0~255)를
 255로 나눠 0~1의 범위로 축소시키는 방식이 있다.
 
-2-2. Regularization(일반화)
+#2-2. Regularization(일반화)
  Regularization은 말 그대로 '제약'을 거는 작업이다.
 여기서 제약을 건다는 것은 모델을 좀 더 complex 혹은 flexible하게 만든다는 것이다.
  Overfitting은 모델이 train data에 너무 딱 맞게 학습이 돼서 발생하는 문제인데,
@@ -38,11 +38,11 @@ Normalization(정규화)과 Regularization(일반화)의
  주로 Hyper Parameter를 수정하는 방식으로 Regularization을 수행한다.
 Regularization 방법으로는 L1 Regularization, L2 Regularization, Dropout, Early stopping 등이 있다.
 
-2-2-1. L1 Regularization
+#2-2-1. L1 Regularization
  L1 Regularization은 cost function에 가중치의 절댓값을 더해주는 것으로
 기존의 cost function에 가중치의 크기가 포함되면서 가중치가 너무 크지 않은 방향으로 학습되도록 한다.
 이때 learning rate(학습률)이 0에 가까울 수록 정규화의 효과는 없어진다.
 
-2-2-2. L2 Regularization
+#2-2-2. L2 Regularization
  기존의 cost function에 가중치의 제곱을 포함하여 더함으로써 L1 Regularization과
 마찬가지로 가중치가 너무 크지 않은 방향으로 학습되게 된다. 이를 Weight decay라고도 한다.
