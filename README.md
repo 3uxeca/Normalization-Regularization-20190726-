@@ -1,15 +1,15 @@
-# Normalization-Regularization-20190726-
-Machine Learning에서의 Normalization(정규화), Regularization(일반화)의 목적과 특징 공부.
+# Normalization-Standardization-Regularization-20190726-
+Machine Learning에서의 Normalization(정규화), Standardization(표준화), Regularization(일반화)의 목적과 특징 공부.
 
 # A. 목적
-Normalization(정규화)과 Regularization(일반화)의
+Normalization(정규화), Standardization(표준화), Regularization(일반화)의
 공통점은 'Overfitting(과적합)'을 방지하기 위함이다.
 
 # B. 차이점
 목적은 같으나 각 개념에는 약간의 차이가 존재한다.
 
-# B.1. Normalization(정규화)
- Normalization은 데이터를 좀 더 compact하게 만들기 위해 사용한다.
+# B.1. Normalization(정규화), Standardization(표준화)
+ Normalization과 Standardization은 데이터를 좀 더 compact하게 만들기 위해 사용한다.
 즉, 값의 범위(scale)를 축소하는 re-scaling 과정을 의미한다. 왜 이렇게 해야할까?
 
  먼저, scale의 범위가 너무 크면 노이즈 데이터가 생성되거나 overfitting 가능성이 높아진다.
@@ -20,10 +20,14 @@ Normalization(정규화)과 Regularization(일반화)의
 값이 너무 커지게 되므로 활성화 함수를 거친다고 해도 한쪽으로 값이 쏠릴 가능성이 높아지기 때문이다.
  마지막으로, weight 초기화 방법으로 정규분포(N(0,1))로부터 값을 생성하는 방법을 자주 사용하는데,
 정규분포의 값은 ±2.58내에 99%가 존재한다. 따라서, scale이 너무 커서 값의 분포 범위가 넓으면 값을 정하기 힘들어진다.
+ 여기서 Normalization과 Standardiztion의 scale 조절 방식에 차이가 존재한다.
 
 ※ Normalization의 scale 조절 방식
  다양한 방식이 존재하나, 한 예를 들자면 이미지의 픽셀 값 범위(0 - 255)를
-255로 나눠 0 - 1의 범위로 축소시키는 방식이 있다.
+255로 나눠 0 - 1의 범위로 축소시키는 방식이 있다
+
+※ Standardization의 scale 조절 방식
+ 표준화 확률 변수를 구하는 방법. Z-Score 구하기 라고 할 수도 있다.
 
 # B.2. Regularization(일반화)
  Regularization은 말 그대로 '제약'을 거는 작업이다.
